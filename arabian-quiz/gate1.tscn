@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxqmdmqxt8x4o"]
+
+[ext_resource type="Script" uid="uid://dfku14n1n11nh" path="res://gate_1.gd" id="1_f1365"]
+[ext_resource type="ArrayMesh" uid="uid://5ahmhsm6f6va" path="res://Archway.obj" id="2_i1rtd"]
+[ext_resource type="Texture2D" uid="uid://d4fpuyr70ydv4" path="res://Gate_Archway Texture.png" id="3_0vs45"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eef43"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1365"]
+albedo_color = Color(0.77732056, 0.9538837, 0.956098, 1)
+albedo_texture = ExtResource("3_0vs45")
+
+[node name="DifficultyTriggerer" type="Area3D"]
+script = ExtResource("1_f1365")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 50, 0, 0, 0)
+shape = SubResource("BoxShape3D_eef43")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("2_i1rtd")
+surface_material_override/0 = SubResource("StandardMaterial3D_f1365")

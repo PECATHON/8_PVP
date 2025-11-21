@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://0i18jq1ms0lh"]
+
+[ext_resource type="Script" uid="uid://dhw71o0srvieu" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://ccgcuu2dy17mf" path="res://aladdin-s-carpet.jpeg" id="2_onrkg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fos0i"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3dxm6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3pqv"]
+albedo_texture = ExtResource("2_onrkg")
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 0.5, 0, 0, 0, 2.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_fos0i")
+
+[node name="CarpetVisuals" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 0.1, 0, 0, 0, 2.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_3dxm6")
+surface_material_override/0 = SubResource("StandardMaterial3D_i3pqv")

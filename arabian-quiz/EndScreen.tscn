@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://ln35whu087j3"]
+
+[ext_resource type="Script" uid="uid://div3gb4n8vhns" path="res://end_screen.gd" id="1_ekb8w"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekb8w")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 224.0
+text = "Final Score : 0"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12116235, 0.22216818, 0.22278056, 1)
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 515.0
+offset_right = 1481.0
+offset_bottom = 839.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 914.0
+offset_top = 888.0
+offset_right = 1002.0
+offset_bottom = 919.0
+text = "Play Again
+"
+
+[node name="ReviewPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ReviewText" type="RichTextLabel" parent="ReviewPanel"]
+layout_mode = 0
+offset_left = 697.0
+offset_top = 75.0
+offset_right = 1275.0
+offset_bottom = 438.0
