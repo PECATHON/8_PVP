@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbbgvxco7m203"]
+
+[ext_resource type="Script" uid="uid://buylh6rybu8nv" path="res://start_screen.gd" id="1_s4vtk"]
+[ext_resource type="Texture2D" uid="uid://b2gqhljsetlar" path="res://WhatsApp Image 2025-11-21 at 04.41.18.jpeg" id="2_d4clo"]
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s4vtk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_d4clo")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 807.0
+offset_top = 581.0
+offset_right = 1187.0
+offset_bottom = 629.0
+placeholder_text = "Enter Your Name: "
+alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 890.0
+offset_top = 653.0
+offset_right = 1100.0
+offset_bottom = 734.0
+text = "Start your Journey
+"

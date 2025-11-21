@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://payufx5weio6"]
 
 [ext_resource type="Script" uid="uid://b4nj2s3acnod1" path="res://question_bubble.gd" id="1_i0hat"]
-[ext_resource type="ArrayMesh" uid="uid://cjta4c6cffndq" path="res://model.obj" id="2_dbmih"]
+[ext_resource type="ArrayMesh" uid="uid://cjta4c6cffndq" path="res://Assets/model.obj" id="2_dbmih"]
 [ext_resource type="Script" uid="uid://ddpulvenkmenu" path="res://mesh_instance_3d.gd" id="3_bq7bc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0hat"]

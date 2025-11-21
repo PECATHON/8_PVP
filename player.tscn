@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://0i18jq1ms0lh"]
 
 [ext_resource type="Script" uid="uid://dhw71o0srvieu" path="res://player.gd" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://ccgcuu2dy17mf" path="res://aladdin-s-carpet.jpeg" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://ccgcuu2dy17mf" path="res://Assets/aladdin-s-carpet.jpeg" id="2_onrkg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fos0i"]
 

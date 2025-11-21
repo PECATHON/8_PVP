@@ -1,27 +1,33 @@
-[gd_scene load_steps=21 format=3 uid="uid://c5jjkv31vr3l0"]
+[gd_scene load_steps=26 format=3 uid="uid://c5jjkv31vr3l0"]
 
 [ext_resource type="Script" uid="uid://dhw71o0srvieu" path="res://player.gd" id="2_r0du0"]
-[ext_resource type="Texture2D" uid="uid://ccgcuu2dy17mf" path="res://aladdin-s-carpet.jpeg" id="3_a814b"]
+[ext_resource type="Texture2D" uid="uid://ccgcuu2dy17mf" path="res://Assets/aladdin-s-carpet.jpeg" id="3_a814b"]
 [ext_resource type="Script" uid="uid://ct4y5uwe50pcr" path="res://camera_3d.gd" id="3_r0du0"]
 [ext_resource type="PackedScene" uid="uid://cxqmdmqxt8x4o" path="res://gate1.tscn" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://bw37qw1m2l20k" path="res://QuizUI.tscn" id="5_fos0i"]
-[ext_resource type="ArrayMesh" uid="uid://bx3tlxpd224kw" path="res://Cactus/PUSHILIN_cactus.obj" id="6_hbc2u"]
-[ext_resource type="Texture2D" uid="uid://dxrn8kfq0v6cp" path="res://Screenshot 2025-11-21 at 5.07.18 AM.png" id="7_8xkvn"]
-[ext_resource type="ArrayMesh" uid="uid://djvp6gvk4krlx" path="res://Camel/Mesh_Camel.obj" id="8_8xkvn"]
-[ext_resource type="ArrayMesh" uid="uid://ctd6nyvsq1vtq" path="res://Hut/model.obj" id="9_8xkvn"]
-[ext_resource type="PackedScene" uid="uid://dx36cplwplpn1" path="res://Rock.glb" id="10_p5x2j"]
+[ext_resource type="ArrayMesh" uid="uid://bx3tlxpd224kw" path="res://Assets/Cactus/PUSHILIN_cactus.obj" id="6_hbc2u"]
+[ext_resource type="Script" uid="uid://cy8dd6vwmg1ex" path="res://pushilin_cactus_2.gd" id="7_3hf6u"]
+[ext_resource type="Texture2D" uid="uid://dxrn8kfq0v6cp" path="res://Assets/Screenshot 2025-11-21 at 5.07.18 AM.png" id="7_8xkvn"]
+[ext_resource type="ArrayMesh" uid="uid://djvp6gvk4krlx" path="res://Assets/Camel/Mesh_Camel.obj" id="8_8xkvn"]
+[ext_resource type="ArrayMesh" uid="uid://ctd6nyvsq1vtq" path="res://Assets/Hut/model.obj" id="9_8xkvn"]
+[ext_resource type="Script" uid="uid://cpd3h1vitri60" path="res://mesh_camel.gd" id="9_p5x2j"]
+[ext_resource type="PackedScene" uid="uid://dx36cplwplpn1" path="res://External Models/Rock.glb" id="10_p5x2j"]
+[ext_resource type="Script" uid="uid://cwhmjudbsjqvn" path="res://mesh_camel_2.gd" id="10_yvb8b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uu6xs"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_r0du0"]
+[sub_resource type="Sky" id="Sky_8xkvn"]
 sky_material = SubResource("ProceduralSkyMaterial_uu6xs")
 
 [sub_resource type="Environment" id="Environment_cm0pq"]
 background_mode = 2
-sky = SubResource("Sky_r0du0")
+sky = SubResource("Sky_8xkvn")
 tonemap_mode = 2
+glow_enabled = true
+glow_bloom = 0.5
+glow_hdr_threshold = 0.8
 fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.8, 0.47843137, 0.54509807, 1)
@@ -41,6 +47,10 @@ uv1_scale = Vector3(0.5, 0.5, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5crlr"]
 albedo_texture = ExtResource("3_a814b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xkvn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3hf6u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5x2j"]
 albedo_texture = ExtResource("7_8xkvn")
@@ -83,13 +93,34 @@ player = NodePath("../Player")
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -23.999939, 0.20636845, -20.638838)
 target_scene_path = "uid://d065xkh0tt1mw"
 
+[node name="MeshInstance3D" parent="DifficultyTriggererEasy" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8xkvn")
+
+[node name="Label3D" type="Label3D" parent="DifficultyTriggererEasy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 72.91294, 0)
+text = "Easy"
+font_size = 1290
+
 [node name="DifficultyTriggererMedium" parent="." instance=ExtResource("4_cm0pq")]
 transform = Transform3D(0.1, 0, 0, 0, 0.0999703, -0.002436999, 0, 0.002436999, 0.0999703, 0.55607986, 0.022274017, -20.469204)
 target_scene_path = "uid://05t5mm7lkdjc"
 
+[node name="Label3D" type="Label3D" parent="DifficultyTriggererMedium"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 71.22452, -1.7362518)
+text = "Medium"
+font_size = 2000
+
 [node name="DifficultyTriggererHard" parent="." instance=ExtResource("4_cm0pq")]
 transform = Transform3D(0.1, 0, 0, 0, 0.0997583, -0.006948549, 0, 0.006948549, 0.0997583, 27.238798, 0.742157, -20.248247)
 target_scene_path = "uid://6cjq61uavnce"
+
+[node name="MeshInstance3D" parent="DifficultyTriggererHard" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_3hf6u")
+
+[node name="Label3D" type="Label3D" parent="DifficultyTriggererHard"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 55.477955, -3.8642578)
+text = "Hard"
+font_size = 2000
 
 [node name="QuizUI" parent="." instance=ExtResource("5_fos0i")]
 
@@ -100,16 +131,40 @@ mesh = ExtResource("6_hbc2u")
 [node name="PushilinCactus2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.4716584, 0, -0.88178134, 0, 1, 0, 0.88178134, 0, -0.4716584, 6.340253, 0.7848978, 1.6880751)
 mesh = ExtResource("6_hbc2u")
+script = ExtResource("7_3hf6u")
 
 [node name="MeshCamel" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.01307132, 0, 0.015137391, 0, 0.02, 0, -0.015137391, 0, -0.01307132, -3.2027802, 1.8714929, -9.294714)
+transform = Transform3D(-0.01307132, 0, 0.015137391, 0, 0.02, 0, -0.015137391, 0, -0.01307132, -4.4620595, 1.8714929, -9.294714)
 material_override = SubResource("StandardMaterial3D_p5x2j")
 mesh = ExtResource("8_8xkvn")
+script = ExtResource("9_p5x2j")
 
-[node name="MeshCamel2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0047627236, 0, 0.016637497, 0, 0.01707917, 0, -0.018680833, 0, 0.0042417697, -4.914157, 1.5990071, -1.9422178)
+[node name="MeshCamel4" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.78123e-08, 0, -8.703019e-08, 0, 8.508777e-08, 0, 9.771881e-08, 0, 6.053739e-08, -4.968722, 6.684354, -1.8572755)
 material_override = SubResource("StandardMaterial3D_yvb8b")
 mesh = ExtResource("8_8xkvn")
+skeleton = NodePath("../MeshCamel5")
+script = ExtResource("10_yvb8b")
+
+[node name="MeshCamel5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.170847e-06, 0, -4.1581065e-06, 0, 4.9819614e-06, 0, 4.6687846e-06, 0, -4.0406485e-06, -4.9687505, 1.6267833, -1.8572603)
+material_override = SubResource("StandardMaterial3D_yvb8b")
+mesh = ExtResource("8_8xkvn")
+skeleton = NodePath("../MeshCamel3")
+script = ExtResource("10_yvb8b")
+
+[node name="MeshCamel3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00028811878, 0, 0.00014981223, 0, 0.0002916981, 0, -0.00016821144, 0, -0.0002928097, -4.9698753, 3.6412156, -1.8586557)
+material_override = SubResource("StandardMaterial3D_yvb8b")
+mesh = ExtResource("8_8xkvn")
+skeleton = NodePath("../MeshCamel2")
+script = ExtResource("10_yvb8b")
+
+[node name="MeshCamel2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0047627236, 0, 0.016637497, 0, 0.01707917, 0, -0.018680833, 0, 0.0042417697, -6.916527, 1.5990071, -1.9422178)
+material_override = SubResource("StandardMaterial3D_yvb8b")
+mesh = ExtResource("8_8xkvn")
+script = ExtResource("10_yvb8b")
 
 [node name="Model" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.678255, 0.5929506, 8.34058)
@@ -128,3 +183,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4.7743454)
 
 [node name="Root Scene2" parent="." instance=ExtResource("10_p5x2j")]
 transform = Transform3D(-0.35758567, 0, -0.9338803, 0, 1, 0, 0.9338803, 0, -0.35758567, 4.45869, 0, -0.5185776)
+
+[editable path="DifficultyTriggererEasy"]
+[editable path="DifficultyTriggererMedium"]
+[editable path="DifficultyTriggererHard"]

@@ -1,15 +1,10 @@
 extends Node
 
-# --- STATE ---
 var current_score: int = 0
 var player_name: String = "Player"
-var selected_character: String = "M" # Default
+var selected_character: String = "M" 
 
-# --- SAVE SYSTEM CONSTANTS ---
 const SAVE_PATH = "user://leaderboard.save"
-
-# --- DATA ---
-# 20 Questions Total: 7 Easy, 7 Medium, 6 Hard
 
 var easy_questions = [
 	{
@@ -100,7 +95,7 @@ var hard_questions = [
 	}
 ]
 
-# --- ONE LINER EXPLAINERS (For End Screen) ---
+
 var review_facts = [
 	"1. 'Open Sesame' is the famous password from Ali Baba.",
 	"2. Sindbad the Sailor hails from the city of Bagdad.",
@@ -114,7 +109,7 @@ var review_facts = [
 	"10. Elephants uprooted trees to show Sindbad their graveyard."
 ]
 
-# --- LOGIC ---
+
 
 func get_questions(difficulty: String):
 	match difficulty:
@@ -131,7 +126,7 @@ func save_score():
 		"date": Time.get_datetime_string_from_system()
 	}
 	data.append(new_entry)
-	# Sort Descending
+
 	data.sort_custom(func(a, b): return a.score > b.score)
 	
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)

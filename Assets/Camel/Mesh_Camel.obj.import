@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://djvp6gvk4krlx"
+path="res://.godot/imported/Mesh_Camel.obj-40f0e602ef71f726fcbf34955a94e61f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Mesh_Camel.obj-40f0e602ef71f726fcbf34955a94e61f.mesh"]
+
+source_file="res://Assets/Camel/Mesh_Camel.obj"
+dest_files=["res://.godot/imported/Mesh_Camel.obj-40f0e602ef71f726fcbf34955a94e61f.mesh", "res://.godot/imported/Mesh_Camel.obj-40f0e602ef71f726fcbf34955a94e61f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

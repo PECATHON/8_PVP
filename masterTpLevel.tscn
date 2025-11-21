@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dr5dx3hmkctoi"]
 
 [ext_resource type="PackedScene" uid="uid://0i18jq1ms0lh" path="res://player.tscn" id="1_4lwmc"]
-[ext_resource type="Texture2D" uid="uid://dql53owlubwbu" path="res://rocky_trail_02_diff_1k.jpg" id="2_2u7kx"]
+[ext_resource type="Texture2D" uid="uid://dql53owlubwbu" path="res://Assets/rocky_trail_02_diff_1k.jpg" id="2_2u7kx"]
 [ext_resource type="Script" uid="uid://ct4y5uwe50pcr" path="res://camera_3d.gd" id="3_2u7kx"]
 [ext_resource type="PackedScene" uid="uid://payufx5weio6" path="res://questionBubble.tscn" id="4_1qtqd"]
 

@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://payufx5weio6"]
+
+[ext_resource type="Script" uid="uid://b4nj2s3acnod1" path="res://question_bubble.gd" id="1_i0hat"]
+[ext_resource type="ArrayMesh" uid="uid://cjta4c6cffndq" path="res://model.obj" id="2_dbmih"]
+[ext_resource type="Script" uid="uid://ddpulvenkmenu" path="res://mesh_instance_3d.gd" id="3_bq7bc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0hat"]
+albedo_color = Color(0.6645762, 0.33752498, 0, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dbmih"]
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_i0hat")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("2_dbmih")
+surface_material_override/0 = SubResource("StandardMaterial3D_i0hat")
+script = ExtResource("3_bq7bc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_dbmih")

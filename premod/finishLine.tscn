@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bskkv2g5ie48g"]
+
+[ext_resource type="Script" uid="uid://kgbo1nr1h3jf" path="res://finish_line.gd" id="1_aafv8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_45tjg"]
+
+[node name="FinishLine" type="Area3D"]
+script = ExtResource("1_aafv8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+shape = SubResource("BoxShape3D_45tjg")

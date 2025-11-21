@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbbgvxco7m203"]
 
 [ext_resource type="Script" uid="uid://buylh6rybu8nv" path="res://start_screen.gd" id="1_s4vtk"]
-[ext_resource type="Texture2D" uid="uid://b2gqhljsetlar" path="res://WhatsApp Image 2025-11-21 at 04.41.18.jpeg" id="2_d4clo"]
+[ext_resource type="Texture2D" uid="uid://b2gqhljsetlar" path="res://Assets/WhatsApp Image 2025-11-21 at 04.41.18.jpeg" id="2_d4clo"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3

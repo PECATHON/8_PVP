@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://dr5dx3hmkctoi"]
+
+[ext_resource type="PackedScene" uid="uid://0i18jq1ms0lh" path="res://player.tscn" id="1_4lwmc"]
+[ext_resource type="Texture2D" uid="uid://dql53owlubwbu" path="res://rocky_trail_02_diff_1k.jpg" id="2_2u7kx"]
+[ext_resource type="Script" uid="uid://ct4y5uwe50pcr" path="res://camera_3d.gd" id="3_2u7kx"]
+[ext_resource type="PackedScene" uid="uid://payufx5weio6" path="res://questionBubble.tscn" id="4_1qtqd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2u7kx"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_r0du0"]
+sky_material = SubResource("ProceduralSkyMaterial_2u7kx")
+
+[sub_resource type="Environment" id="Environment_1qtqd"]
+background_mode = 2
+sky = SubResource("Sky_r0du0")
+tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1qtqd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g73gl"]
+albedo_texture = ExtResource("2_2u7kx")
+uv1_scale = Vector3(0.5, 0.5, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Area3D2" parent="." instance=ExtResource("4_1qtqd")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.06283283, 4.2377377, -37.065014)
+
+[node name="Player" parent="." instance=ExtResource("1_4lwmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Player"]
+environment = SubResource("Environment_1qtqd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Player"]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(900, 0, 0, 0, 492.3, 0, 0, 0, 492.3, 0, 0, 0)
+mesh = SubResource("PlaneMesh_1qtqd")
+surface_material_override/0 = SubResource("StandardMaterial3D_g73gl")
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 0.5197791, 0.8543007, 0, -0.8543007, 0.5197791, 0, 3, 0)
+script = ExtResource("3_2u7kx")
+player = NodePath("../Player")
+
+[node name="Area3D" parent="." instance=ExtResource("4_1qtqd")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.0125665665, 3.5846362, -7.4130025)
+
+[node name="Area3D3" parent="." instance=ExtResource("4_1qtqd")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.29318333, 4.93934, -91.93858)
+
+[node name="Area3D4" parent="." instance=ExtResource("4_1qtqd")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.09211826, 4.5818553, -66.60486)
+
+[node name="Area3D5" parent="." instance=ExtResource("4_1qtqd")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.31416416, 4.6827106, -135.65097)
+
+[node name="Area3D6" parent="." instance=ExtResource("4_1qtqd")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.1130991, 4.9327965, -116.299965)
+
+[node name="Area3D7" parent="." instance=ExtResource("4_1qtqd")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 1.2355661, 5.1111813, -172.4695)
+
+[node name="Area3D8" parent="." instance=ExtResource("4_1qtqd")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.4313059, 4.989563, -153.48788)
+
+[node name="Area3D9" parent="." instance=ExtResource("4_1qtqd")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6.1778307, 4.820654, -187.45045)
+
+[node name="Area3D10" parent="." instance=ExtResource("4_1qtqd")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 11.120095, 4.5301266, -200.8428)

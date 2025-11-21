@@ -11,35 +11,34 @@ var buttons = []
 func _ready():
 	buttons = [btn_option_1, btn_option_2, btn_option_3, btn_option_4]
 	
-	# HIDE the quiz at start
+	
 	visible = false
 	
-	# Connect buttons
 	for btn in buttons:
-		if btn: # Safety check
+		if btn: 
 			btn.pressed.connect(_on_button_pressed.bind(btn))
 
 func show_quiz(question_dict):
-	# 1. Pause the game!
+	
 	get_tree().paused = true
 	visible = true
 	feedback.text = ""
 	
-	# 2. Set Text
+
 	q_label.text = question_dict["q"]
-	correct_answer_text = question_dict["options"][0] # Remember, first one is correct
+	correct_answer_text = question_dict["options"][0] 
 	
-	# 3. Shuffle Options logic
+
 	var opts = question_dict["options"].duplicate()
 	opts.shuffle()
 	
-	# 4. Assign to buttons
+
 	for i in range(4):
 		buttons[i].text = opts[i]
 		buttons[i].disabled = false
 
 func _on_button_pressed(btn):
-	# Disable all buttons so they can't double click
+
 	for b in buttons: b.disabled = true
 	
 	if btn.text == correct_answer_text:
@@ -49,9 +48,9 @@ func _on_button_pressed(btn):
 	else:
 		feedback.text = "WRONG! It was: " + correct_answer_text
 		feedback.modulate = Color.RED
-		# No points
+
 	
-	# Wait 1.5 seconds so they can read feedback, then resume
+
 	await get_tree().create_timer(1.5).timeout # Note: This timer works even when paused if process_mode is always?
 	# Wait, Timers pause by default. We need a hack or setup.
 	# EASIER HACK:
